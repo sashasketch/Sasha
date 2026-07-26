@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sasha — Pencil Artist Portfolio</title>
+<meta name="description" content="Portfolio of Sasha — a pencil artist working in graphite and fine detail. Explore gallery work, competition achievements, and creative process.">
+<meta name="keywords" content="pencil artist, graphite art, drawing portfolio, art competitions, creative process">
+<meta name="author" content="Sasha">
+
+<meta property="og:title" content="Sasha — Pencil Artist Portfolio">
+<meta property="og:description" content="Graphite drawings, process, and competition work by Sasha.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="images/og-cover.jpg">
+
+<link rel="icon" href="images/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="blob" aria-hidden="true"></div>
+
+<header class="site-header">
+  <a href="#hero" class="logo">Sasha</a>
+  <nav class="main-nav" aria-label="Primary">
+    <a href="#about">About</a>
+    <a href="#gallery">Portfolio</a>
+    <a href="#achievements">Achievements</a>
+    <a href="#process">Process</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <div class="header-actions">
+    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark and light theme" aria-pressed="false">
+      <span class="theme-icon" aria-hidden="true"></span>
+    </button>
+    <button id="nav-toggle" class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+
+  <section id="hero" class="hero">
+    <p class="eyebrow reveal">Pencil Artist</p>
+    <h1 class="reveal">Every drawing<br>starts with a single line.</h1>
+    <p class="hero-sub reveal">I'm Sasha — I work mainly in graphite, building up detail and shading one line at a time. This is a record of what I've drawn, entered, and learned along the way.</p>
+    <div class="hero-cta reveal">
+      <a href="#gallery" class="btn btn-primary">View the work</a>
+      <a href="#contact" class="btn btn-ghost">Get in touch</a>
+    </div>
+    <a href="#about" class="scroll-cue" aria-label="Scroll to About section">
+      <span></span>
+    </a>
+  </section>
+
+  <section id="about" class="about">
+    <div class="section-head reveal">
+      <p class="eyebrow">About</p>
+      <h2>Working in graphite, on deadline, on instinct.</h2>
+    </div>
+    <div class="about-grid">
+      <div class="about-portrait reveal">
+        <div class="portrait-frame">
+          <img src="images/portrait.jpg" alt="Portrait of Sasha in the studio" loading="lazy">
+        </div>
+      </div>
+      <div class="about-copy reveal">
+        <p>I'm a visual artist working mainly in pencil and graphite, focused on realistic shading and fine detail. My drawings tend to start from a single reference or a shape I can't stop thinking about, and grow outward from there.</p>
+        <p>Outside of personal projects, I compete in live art events — where a theme is revealed on the spot and the work has to come together fast. That pressure has shaped how I draw as much as any studio habit has.</p>
+        <ul class="about-facts">
+          <li><span>Based in</span>Your City</li>
+          <li><span>Medium</span>Pencil, graphite, fine detail work</li>
+          <li><span>Currently</span>Preparing for upcoming competitions</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="gallery" class="gallery">
+    <div class="section-head reveal">
+      <p class="eyebrow">Portfolio</p>
+      <h2>Selected work.</h2>
+    </div>
+    <div class="gallery-grid">
+      <button class="gallery-item reveal" data-caption="Untitled I — Graphite on paper, 2026">
+        <img src="images/work-1.jpg" alt="Untitled I, graphite on paper" loading="lazy">
+      </button>
+      <button class="gallery-item reveal" data-caption="Untitled II — Pencil sketch, 2026">
+        <img src="images/work-2.jpg" alt="Untitled II, pencil sketch" loading="lazy">
+      </button>
+      <button class="gallery-item reveal" data-caption="Untitled III — Graphite on paper, 2025">
+        <img src="images/work-3.jpg" alt="Untitled III, graphite on paper" loading="lazy">
+      </button>
+      <button class="gallery-item reveal" data-caption="Untitled IV — Pencil sketch, 2025">
+        <img src="images/work-4.jpg" alt="Untitled IV, pencil sketch" loading="lazy">
+      </button>
+      <button class="gallery-item reveal" data-caption="Untitled V — Live competition piece, 2025">
+        <img src="images/work-5.jpg" alt="Untitled V, live competition piece" loading="lazy">
+      </button>
+      <button class="gallery-item reveal" data-caption="Untitled VI — Graphite on paper, 2024">
+        <img src="images/work-6.jpg" alt="Untitled VI, graphite on paper" loading="lazy">
+      </button>
+    </div>
+  </section>
+
+  <section id="achievements" class="achievements">
+    <div class="section-head reveal">
+      <p class="eyebrow">Competitions</p>
+      <h2>Where the work has been tested.</h2>
+    </div>
+    <ol class="timeline">
+      <li class="timeline-item reveal">
+        <div class="timeline-mark"></div>
+        <div class="timeline-body">
+          <p class="timeline-date">2026</p>
+          <h3>Visual Frequency — Wisteria Fest</h3>
+          <p>Competing in the school's live-theme art event: one participant per school, theme revealed on the spot with 15 minutes to research before painting begins.</p>
+        </div>
+      </li>
+      <li class="timeline-item reveal">
+        <div class="timeline-mark"></div>
+        <div class="timeline-body">
+          <p class="timeline-date">Add year</p>
+          <h3>Competition or exhibition name</h3>
+          <p>Short note on placement, theme, or what the piece was about.</p>
+        </div>
+      </li>
+    </ol>
+  </section>
+
+  <section id="process" class="process">
+    <div class="section-head reveal">
+      <p class="eyebrow">Process</p>
+      <h2>How a drawing comes together.</h2>
+    </div>
+    <ol class="process-list">
+      <li class="process-step reveal">
+        <span class="process-num">01</span>
+        <div>
+          <h3>Reference &amp; theme</h3>
+          <p>I start from a theme, a feeling, or a reference photo — sometimes given only minutes before drawing starts.</p>
+        </div>
+      </li>
+      <li class="process-step reveal">
+        <span class="process-num">02</span>
+        <div>
+          <h3>Light sketch</h3>
+          <p>A loose outline goes down first, marking proportions and composition before any real detail.</p>
+        </div>
+      </li>
+      <li class="process-step reveal">
+        <span class="process-num">03</span>
+        <div>
+          <h3>Base shading</h3>
+          <p>Broad tonal values come in next, establishing where the light and shadow will sit.</p>
+        </div>
+      </li>
+      <li class="process-step reveal">
+        <span class="process-num">04</span>
+        <div>
+          <h3>Detail &amp; texture</h3>
+          <p>Once the composition holds up, I go back in for fine linework, texture, and the small decisions that finish it.</p>
+        </div>
+      </li>
+    </ol>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="section-head reveal">
+      <p class="eyebrow">Contact</p>
+      <h2>Have a piece in mind, or a competition to invite me to?</h2>
+    </div>
+    <div class="contact-grid">
+      <form class="contact-form reveal" action="https://formspree.io/f/yourFormID" method="POST">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required>
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+        <button type="submit" class="btn btn-primary">Send message</button>
+      </form>
+      <div class="contact-social reveal">
+        <a href="https://instagram.com/yourhandle" target="_blank" rel="noopener" class="social-link">
+          <span class="social-icon" data-icon="instagram"></span>
+          Instagram — @yourhandle
+        </a>
+        <a href="https://wa.me/10000000000" target="_blank" rel="noopener" class="social-link">
+          <span class="social-icon" data-icon="whatsapp"></span>
+          WhatsApp — message directly
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <p>&copy; 2026 Sasha. All work shown remains the artist's own.</p>
+</footer>
+
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <button class="lightbox-close" aria-label="Close image">&times;</button>
+  <img src="" alt="" id="lightbox-img">
+  <p class="lightbox-caption" id="lightbox-caption"></p>
+</div>
+
+<script src="script.js"></script>
+</body>
+  </html>
