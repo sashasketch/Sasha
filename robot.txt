@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sashasketch.github.io/sitemap.xml
+
