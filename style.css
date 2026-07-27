@@ -291,20 +291,6 @@ main > section {
 }
 .gallery-item:hover::after, .gallery-item:focus-visible::after { opacity: 1; }
 
-/* ---------- ACHIEVEMENTS / TIMELINE ---------- */
-.timeline { display: flex; flex-direction: column; gap: 2.5rem; border-left: 2px solid var(--line); padding-left: 2rem; }
-.timeline-item { position: relative; }
-.timeline-mark {
-  position: absolute;
-  left: -2.4rem;
-  top: .3rem;
-  width: 12px; height: 12px;
-  border-radius: 50%;
-  background: var(--gold);
-  box-shadow: 0 0 0 4px var(--gold-soft);
-}
-.timeline-date { font-size: .85rem; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--gold); margin-bottom: .3rem; }
-
 /* ---------- PROCESS ---------- */
 .process-list { display: flex; flex-direction: column; gap: 2.25rem; }
 .process-step { display: flex; gap: 1.5rem; align-items: flex-start; }
