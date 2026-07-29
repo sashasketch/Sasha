@@ -249,14 +249,27 @@
     .sketchbook-edge .rings{ display:none; }
   }
 
-  /* ---------- GALLERY ---------- */
-  .gallery-grid{
-    display:grid;
-    grid-template-columns: repeat(3, 1fr);
+  /* ---------- GALLERY (auto-scrolling marquee) ---------- */
+  .gallery-viewport{
+    overflow: hidden;
+    margin: 0 calc(-1 * clamp(20px, 5vw, 48px));
+    -webkit-mask-image: linear-gradient(to right, transparent 0, #000 60px, #000 calc(100% - 60px), transparent 100%);
+    mask-image: linear-gradient(to right, transparent 0, #000 60px, #000 calc(100% - 60px), transparent 100%);
+  }
+  .gallery-track{
+    display:flex;
     gap: 22px;
+    width: max-content;
+    padding: 0 clamp(20px, 5vw, 48px);
+    animation: scroll-left 32s linear infinite;
+  }
+  .gallery-viewport:hover .gallery-track{
+    animation-play-state: paused;
   }
   .card{
     position:relative;
+    flex: 0 0 auto;
+    width: min(70vw, 280px);
     aspect-ratio: 4/5;
     border-radius: 3px;
     overflow:hidden;
@@ -264,11 +277,7 @@
     background:
       repeating-linear-gradient(115deg, transparent 0 8px, rgba(35,35,35,0.05) 8px 9px),
       var(--paper-soft);
-    opacity: 0;
-    transform: translateY(14px);
-    transition: opacity .5s ease, transform .5s ease;
   }
-  .card.visible{ opacity:1; transform: translateY(0); }
   .card .no{
     position:absolute; top: 12px; left: 12px;
     font-family: var(--mono); font-size: 11px;
@@ -282,8 +291,10 @@
   .card-caption .title{ font-family: var(--display); font-weight:600; font-size: 16px; margin:0; }
   .card-caption .meta{ font-family: var(--mono); font-size: 11px; color: var(--graphite-mid); margin: 2px 0 0; }
 
-  @media (max-width: 860px){ .gallery-grid{ grid-template-columns: repeat(2, 1fr); } }
-  @media (max-width: 520px){ .gallery-grid{ grid-template-columns: 1fr; } }
+  @keyframes scroll-left{
+    from{ transform: translateX(0); }
+    to{ transform: translateX(-50%); }
+  }
 
   /* ---------- CONTACT ---------- */
   .contact{ text-align:center; }
@@ -311,6 +322,7 @@
 
   @media (prefers-reduced-motion: reduce){
     *{ animation-duration: 0.001s !important; transition-duration: 0.001s !important; }
+    .gallery-track{ animation: none !important; }
   }
 </style>
 </head>
@@ -381,14 +393,24 @@
       <h2>Selected Work</h2>
       <span class="tag">06 pieces — replace with your own</span>
     </div>
-    <div class="gallery-grid">
-      <!-- ✏️ REPLACE-ME: swap each .card background for an <img src="your-art.jpg"> and edit the captions -->
-      <div class="card"><span class="no">No. 01</span><div class="card-caption"><p class="title">Untitled Study</p><p class="meta">Graphite · 2026</p></div></div>
-      <div class="card"><span class="no">No. 02</span><div class="card-caption"><p class="title">Untitled Study</p><p class="meta">Charcoal · 2026</p></div></div>
-      <div class="card"><span class="no">No. 03</span><div class="card-caption"><p class="title">Untitled Study</p><p class="meta">Graphite · 2026</p></div></div>
-      <div class="card"><span class="no">No. 04</span><div class="card-caption"><p class="title">Untitled Study</p><p class="meta">Colored Pencil · 2026</p></div></div>
-      <div class="card"><span class="no">No. 05</span><div class="card-caption"><p class="title">Untitled Study</p><p class="meta">Graphite · 2026</p></div></div>
-      <div class="card"><span class="no">No. 06</span><div class="card-caption"><p class="title">Untitled Study</p><p class="meta">Ink · 2026</p></div></div>
+    <div class="gallery-viewport">
+      <div class="gallery-track">
+        <!-- ✏️ REPLACE-ME: swap each .card background for an <img src="your-art.jpg"> and edit the captions. -->
+        <!-- This whole block of 6 cards is duplicated once below it — keep both copies identical so the scroll loop is seamless. -->
+        <div class="card"><span class="no">No. 01</span><div class="card-caption"><p class="title">Untitled Study</p><p class="meta">Graphite · 2026</p></div></div>
+        <div class="card"><span class="no">No. 02</span><div class="card-caption"><p class="title">Untitled Study</p><p class="meta">Charcoal · 2026</p></div></div>
+        <div class="card"><span class="no">No. 03</span><div class="card-caption"><p class="title">Untitled Study</p><p class="meta">Graphite · 2026</p></div></div>
+        <div class="card"><span class="no">No. 04</span><div class="card-caption"><p class="title">Untitled Study</p><p class="meta">Colored Pencil · 2026</p></div></div>
+        <div class="card"><span class="no">No. 05</span><div class="card-caption"><p class="title">Untitled Study</p><p class="meta">Graphite · 2026</p></div></div>
+        <div class="card"><span class="no">No. 06</span><div class="card-caption"><p class="title">Untitled Study</p><p class="meta">Ink · 2026</p></div></div>
+        <!-- duplicate copy starts here — required for the seamless loop, do not remove -->
+        <div class="card"><span class="no">No. 01</span><div class="card-caption"><p class="title">Untitled Study</p><p class="meta">Graphite · 2026</p></div></div>
+        <div class="card"><span class="no">No. 02</span><div class="card-caption"><p class="title">Untitled Study</p><p class="meta">Charcoal · 2026</p></div></div>
+        <div class="card"><span class="no">No. 03</span><div class="card-caption"><p class="title">Untitled Study</p><p class="meta">Graphite · 2026</p></div></div>
+        <div class="card"><span class="no">No. 04</span><div class="card-caption"><p class="title">Untitled Study</p><p class="meta">Colored Pencil · 2026</p></div></div>
+        <div class="card"><span class="no">No. 05</span><div class="card-caption"><p class="title">Untitled Study</p><p class="meta">Graphite · 2026</p></div></div>
+        <div class="card"><span class="no">No. 06</span><div class="card-caption"><p class="title">Untitled Study</p><p class="meta">Ink · 2026</p></div></div>
+      </div>
     </div>
   </section>
 
@@ -410,19 +432,7 @@
 
 <footer>&copy; 2026 Sasha. Built by hand, not a template.</footer>
 
-<script>
-  // Fade-in gallery cards as they scroll into view
-  const cards = document.querySelectorAll('.card');
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add('visible');
-        io.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.15 });
-  cards.forEach(c => io.observe(c));
-</script>
+
 
 </body>
-                                                                                                                                                    </html>
+</html>
