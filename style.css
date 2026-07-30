@@ -556,3 +556,75 @@ main > section {
 .nav-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
 .nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
 .nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+
+/* ============================================
+   CLIENT CONTACT FORM
+   Paste this at the very end of style.css.
+   Reuses your existing .btn, .btn-primary, and .eyebrow
+   classes on purpose — no duplicate button/label styling.
+   ============================================ */
+
+.client-form-wrap {
+  margin-top: 2.5rem;
+  padding: 2rem;
+  max-width: 460px;
+  background: var(--canvas-raised);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+.client-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.client-form .form-row {
+  display: flex;
+  flex-direction: column;
+  gap: .4rem;
+}
+
+.client-form label {
+  font-size: .78rem;
+  font-weight: 600;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.client-form input,
+.client-form select,
+.client-form textarea {
+  font: inherit;
+  font-size: .95rem;
+  color: var(--ink);
+  background: var(--canvas);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: .7rem .9rem;
+  resize: vertical;
+  transition: border-color .2s var(--ease), box-shadow .2s var(--ease);
+}
+
+.client-form select { color-scheme: light dark; }
+
+.client-form input::placeholder,
+.client-form textarea::placeholder {
+  color: var(--ink-soft);
+  opacity: .6;
+}
+
+.client-form input:focus-visible,
+.client-form select:focus-visible,
+.client-form textarea:focus-visible {
+  outline: none;
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px var(--gold-soft);
+}
+
+.client-form .btn-primary {
+  align-self: flex-start;
+  margin-top: .25rem;
+}
