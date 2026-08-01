@@ -260,6 +260,42 @@ main > section {
 .about-facts li { display: flex; flex-direction: column; gap: .15rem; border-top: 1px solid var(--line); padding-top: .75rem; color: var(--ink); font-weight: 500; }
 .about-facts li span { font-size: .8rem; text-transform: uppercase; letter-spacing: .08em; color: var(--ink-soft); font-weight: 600; }
 
+/* ---------- STATS ---------- */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+.stat-card {
+  background: var(--canvas-raised);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 2.25rem 1.5rem;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0,0,0,.06);
+  transition: transform .3s var(--ease), border-color .3s var(--ease);
+}
+.stat-card:hover { transform: translateY(-6px); border-color: var(--gold); }
+.stat-number {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 5vw, 3rem);
+  font-weight: 700;
+  color: var(--gold);
+  margin: 0 0 .4rem;
+  font-variant-numeric: tabular-nums;
+}
+.stat-label {
+  margin: 0;
+  font-size: .9rem;
+  font-weight: 600;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+@media (max-width: 700px) {
+  .stats-grid { grid-template-columns: 1fr; }
+}
+
 /* ---------- GALLERY ---------- */
 .gallery-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
 .gallery-item {
