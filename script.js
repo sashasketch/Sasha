@@ -92,3 +92,44 @@
     if (e.key === "Escape" && lightbox?.getAttribute("aria-hidden") === "false") closeLightbox();
   });
 })();
+/* ---------- Stat counters ---------- */
+const statEls = document.querySelectorAll(".stat-number");
+if ("IntersectionObserver" in window && statEls.length) {
+  const animateCount = (el) => {
+    const target = parseInt(el.getAttribute("data-target"), 10) || 0;
+    const suffix = el.getAttribute("data-suffix") || "";
+    const duration = 2200;
+    const start = performance.now();
+
+    const tick = (now) => {
+      const progress = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3); // ease-out
+      const value = Math.floor(eased * target);
+      el.textContent = value + suffix;
+      if (progress < 1) {
+        requestAnimationFrame(tick);
+      } else {
+        el.textContent = target + suffix;
+      }
+    };
+    requestAnimationFrame(tick);
+  };
+
+  const statIO = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          animateCount(entry.target);
+          statIO.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.4 }
+  );
+  statEls.forEach((el) => statIO.observe(el));
+} else {
+  statEls.forEach((el) => {
+    const target = parseInt(el.getAttribute("data-target"), 10) || 0;
+    el.textContent = target + (el.getAttribute("data-suffix") || "");
+  });
+}
